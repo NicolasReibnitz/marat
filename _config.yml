@@ -13,38 +13,38 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: L'Ami du peuple
-email: jcoenep@hotmail.com
+title: Das Laboratory
+email: n.reibnitz@gmail.com
 description: >
-  Journal politique impartial, <br>
-  Par Mr. P. Marat auteur de l'Offrande a la patrie, <br>
-  du Moniteur et du Plan de Constitution, etc.
-tagline: vitam impendere vero
-location: Versailles
+  Being mostly a list of perceived achievements,<br />
+  ramblings, and general flimflammery.<br />
+  Home of the Encode-O-Mat.
+tagline: obscurum per obscurius
+tagline_tooltip: An argument or proposition expressed in terms which are even less clear than the original; an explanation which is harder to understand than what it is meant to explain.
+location: Miami, Florida
 date: true
-baseurl: "/marat" # the subpath of your site, e.g. /blog
-url: "http://johncoene.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-author: Jean-Paul Marat
-google_analytics: UA-101394056-1
+baseurl: "/logbuch" # the subpath of your site, e.g. /blog
+url: "https://daslaboratory.com" # the base hostname & protocol for your site, e.g. http://example.com
+author: Nicolas Reibnitz
+# google_analytics: UA-101394056-1
 
 # SEO
 twitter:
-  username: jdatap
+  username: NReibnitz
 
 logo: /assets/logo.png
 
-lang: fr
+lang: en
 
-facebook:
- app_id: 101766790448070
+# facebook:
+#  app_id: 101766790448070
 
 social:
-  name: John Coene
+  name: Nicolas Reibnitz
   links:
-    - https://twitter.com/jdatap
-    - https://www.linkedin.com/in/johncoene
-    - https://plus.google.com/109009224717674019651
-    - https://github.com/JohnCoene
+    - https://twitter.com/NReibnitz
+    - https://www.linkedin.com/in/nicolas-reibnitz/
+    - https://github.com/NicolasReibnitz
 
 # Build settings
 exclude: README.md
@@ -59,3 +59,7 @@ exclude:
 plugins_dir:
   - jekyll-roman
   - jekyll-seo-tag
+sass:
+  style: compact # possible values: nested expanded compact compressed
+  sass_dir: _sass
+  implementation: sass-embedded

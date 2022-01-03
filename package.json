@@ -1,0 +1,20 @@
+{
+	"name": "marat",
+	"version": "1.0.0",
+	"description": "![Marat](https://raw.githubusercontent.com/JohnCoene/marat/master/assets/img/screenshot.png)",
+	"license": "UNLICENSED",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NicolasReibnitz/marat.git"
+	},
+	"author": "Nicolas Reibnitz <n.reibnitz@gmail.com> (http://daslaboritory.com/)",
+	"homepage": "https://github.com/NicolasReibnitz/marat#readme",
+	"bugs": {
+		"url": "https://github.com/NicolasReibnitz/marat/issues"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "bundle exec jekyll build",
+		"dev": "bundle exec jekyll serve --watch"
+	}
+}

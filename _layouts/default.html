@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ site.title }}</title>
-    {% include header.html %}
-    {% seo %}
-  </head>
-  <body>
+	<head>
+		<title>{{ site.title }}</title>
+		{% include header.html %} {% seo %}
+	</head>
+	<body>
+		{% include nav.html %}
 
-    {% include nav.html %}
-    <div class="container">
-      <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line">
-      <p class="center author">{{ site.author }}</p>
-      <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line flip">
-      <h1 class="brand title center" id="type">{{ site.title | upcase }}</h1>
-      <h5 class="center">{{ site.description | markdownify }}</h5>
-      <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag flip">
-      <p class="right tagline">{{ site.tagline }}</p>
-      <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag">
-      <div class="center">
-        <br>
-        <h4 class="space">{{ site.location | upcase }}</h4>
-        {% if site.date == true %}<h5>{{ site.time | date_to_long_string | upcase }}</h5>{% endif %}
-        <br>
-      </div>
-      {% include articles.html %}
-    </div>
+		<div class="container">
+			<img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line mt-25" />
+			<p class="center author mb-none">{{ site.author }}'s</p>
+			<h1 class="brand title center pt-none" id="type">{{ site.title | upcase }}</h1>
+			<img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line flip" />
+			<h5 class="center description">{{ site.description | markdownify }}</h5>
+			<img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag flip" />
+			<div class="tagline-wrapper">
+				<p class="right tagline tooltip">{{ site.tagline }}<span class="tooltiptext">{{ site.tagline_tooltip }}</span></p>
+			</div>
+			<img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag" />
+			<div class="center">
+				<br />
+				<h4 class="space mt-2">{{ site.location | upcase }}</h4>
+				{% if site.date == true %}
+				<h5>{{ site.time | date: '%d %B' | upcase }} {{ site.time | date: '%Y' | minus: 200 }}</h5>
+				{% endif %}
+				<br />
+			</div>
+			{% if page.url == "/" %} {% include articles.html %} {% else %} {{ content }} {% endif %}
+		</div>
 
-    {% include foot.html %}
-
-  </body>
+		{% include foot.html %}
+	</body>
 </html>
