@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: dude
 title: Dude
 permalink: /dude/
 ---

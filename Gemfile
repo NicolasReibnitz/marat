@@ -30,3 +30,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sass-embedded'
 
 gem "webrick", "~> 1.7"
+gem 'jekyll-compose', group: [:jekyll_plugins]

@@ -24,6 +24,72 @@
 				<br />
 			</div>
 
+			<hr />
+			<h3>SITE:</h3>
+			<table>
+				<tr>
+					<td>site.time</td>
+					<td>{{site.time}}</td>
+				</tr>
+				<tr>
+					<td>site.pages</td>
+				</tr>
+				<tr>
+					<td>site.posts</td>
+				</tr>
+				<tr>
+					<td>site.related_posts</td>
+					<td>{{site.related_posts}}</td>
+				</tr>
+				<tr>
+					<td>site.static_files</td>
+					<td>{{site.static_files}}</td>
+				</tr>
+				<tr>
+					<td>site.html_pages</td>
+				</tr>
+				<tr>
+					<td>site.html_files</td>
+					<td>{{site.html_files}}</td>
+				</tr>
+				<tr>
+					<td>site.collections</td>
+					<td>{{ site.collections }}</td>
+				</tr>
+				<tr>
+					<td>site.data</td>
+					<td>{{site.data}}</td>
+				</tr>
+				<tr>
+					<td>site.documents</td>
+				</tr>
+				<tr>
+					<td>site.categories.CATEGORY</td>
+					<td>{{site.categories.CATEGORY}}</td>
+				</tr>
+				<tr>
+					<td>site.tags.TAG</td>
+					<td>{{site.tags.TAG}}</td>
+				</tr>
+				<tr>
+					<td>site.url</td>
+					<td>{{site.url}}</td>
+				</tr>
+				<tr>
+					<td>site.[CONFIGURATION_DATA]</td>
+					<td>{{site.social}}</td>
+				</tr>
+			</table>
+
+			{{site}}<br />
+			<!-- {% for post in site.posts %} {% if post.title == page.title %} {{ forloop.index | roman }} {% endif %} {% endfor %} -->
+			{% for post in site.posts %} {{ forloop.index | minus: site.posts.size | minus: 1 | times: -1 | roman}} {{ site.posts.count }} {{post.title}} / {{page.collection}} / {{post.categories}} / {{page.next}}<br />
+			{% endfor %}
+			<hr />
+			{% for page in site.pages %} {{ forloop.index | minus: site.posts.size | minus: 1 | times: -1 | roman}} {{ site.posts.count }} {{page.dir}} / {{page.path}} / {{page.name}} / {{page.title}} / {{page.next}} / {{page.id}} / {{page.collection}} / {{page.tags}} / {{page.categories}} / {{page.next}}<br />
+			{% endfor %}
+			<hr />
+
 			{{ content }}
 		</div>
 
